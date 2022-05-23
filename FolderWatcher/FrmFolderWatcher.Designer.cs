@@ -36,6 +36,9 @@ namespace FolderWatcher
             this.btnStartMonitor = new System.Windows.Forms.Button();
             this.richTextLog = new System.Windows.Forms.RichTextBox();
             this.btnStopMonitor = new System.Windows.Forms.Button();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSelectFolder
@@ -95,11 +98,28 @@ namespace FolderWatcher
             this.btnStopMonitor.UseVisualStyleBackColor = true;
             this.btnStopMonitor.Click += new System.EventHandler(this.btnStopMonitor_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 211);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.TabIndex = 6;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(177, 17);
+            this.toolStripStatusLabel1.Text = "Developed by: Denis Mazariegos";
+            // 
             // FrmFolderWatcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 218);
+            this.ClientSize = new System.Drawing.Size(632, 233);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.btnStopMonitor);
             this.Controls.Add(this.richTextLog);
             this.Controls.Add(this.btnStartMonitor);
@@ -110,6 +130,8 @@ namespace FolderWatcher
             this.MaximizeBox = false;
             this.Name = "FrmFolderWatcher";
             this.Text = "Folder Watcher";
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +146,8 @@ namespace FolderWatcher
         private System.Windows.Forms.Button btnStartMonitor;
         private System.Windows.Forms.RichTextBox richTextLog;
         private System.Windows.Forms.Button btnStopMonitor;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

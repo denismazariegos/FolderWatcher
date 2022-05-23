@@ -46,7 +46,7 @@ namespace FolderWatcher
                 {
                     Log(DateTime.Now + " " + "Processing filename " + filename);
 
-                    if (filename.Contains(".xls") || filename.Contains(".xlsx"))
+                    if (Path.GetExtension(filename) == ".xls" || Path.GetExtension(filename) == ".xlsx")
                     {
                         
                         fileoper.ProcessExcelFile(filename);
