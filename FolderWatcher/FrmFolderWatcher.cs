@@ -20,11 +20,19 @@ namespace FolderWatcher
         {
             InitializeComponent();
         }
-        
-        delegate void SetTextCallback(string text);
 
+        /// <summary>
+        /// Variables declaration
+        /// </summary>
+        /// <param name="text"></param>
+        delegate void SetTextCallback(string text);
         System.Timers.Timer timer = new System.Timers.Timer();
 
+        /// <summary>
+        /// Select folder click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSelectFolder_Click(object sender, EventArgs e)
         {
             DialogResult result = folderBrowser.ShowDialog();
@@ -34,6 +42,9 @@ namespace FolderWatcher
             }
         }
 
+        /// <summary>
+        /// Folder watcher main process
+        /// </summary>
         public void FolderWatcher()
         {
             string[] files = Directory.GetFiles(txtxSelectedFolder.Text);
@@ -67,11 +78,21 @@ namespace FolderWatcher
             }
         }
        
+        /// <summary>
+        /// This method calls folder watcher main method once time elapsed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {            
             FolderWatcher();
         }
 
+        /// <summary>
+        /// Start monitor click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnStartMonitor_Click(object sender, EventArgs e)
         {
             if (txtxSelectedFolder.Text == string.Empty)
@@ -89,6 +110,11 @@ namespace FolderWatcher
             }
         }
 
+        /// <summary>
+        /// Stop Monitor click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnStopMonitor_Click(object sender, EventArgs e)
         {
             timer.Stop();
@@ -97,6 +123,10 @@ namespace FolderWatcher
             btnStopMonitor.Enabled = false;
         }
 
+        /// <summary>
+        /// Log method
+        /// </summary>
+        /// <param name="message"></param>
         private void Log(string message)
         {
             if (this.richTextLog.InvokeRequired)

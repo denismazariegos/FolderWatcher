@@ -8,6 +8,9 @@ namespace FolderWatcher.Enums
 {
     public class CustomEnums
     {
+        /// <summary>
+        /// Filetype Enumeration
+        /// </summary>
         public enum Filetype
         {
             Excel,

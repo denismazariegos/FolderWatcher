@@ -11,9 +11,16 @@ namespace FolderWatcher.Clases
 {
     public class FileOperations
     {
+        /// <summary>
+        /// Local variables
+        /// </summary>
         private bool firtTime = false;
         private const string masterexcelfile = "Master.xlsx";
 
+        /// <summary>
+        /// Method to Process the excel files
+        /// </summary>
+        /// <param name="file"></param>
         public void ProcessExcelFile(string file)
         {
             //Declare variables
@@ -74,6 +81,11 @@ namespace FolderWatcher.Clases
             }
         }
 
+        /// <summary>
+        /// Method to move files after the process
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="filetype"></param>
         public void MoveFile(string file, CustomEnums.Filetype filetype)
         {
             string destinationfolder = string.Empty;
